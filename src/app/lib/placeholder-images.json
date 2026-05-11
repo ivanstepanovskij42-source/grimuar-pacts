@@ -1,0 +1,16 @@
+{
+  "placeholderImages": [
+    {
+      "id": "warrior-art",
+      "description": "Закаленный в битвах мастер стали",
+      "imageUrl": "https://i.pinimg.com/736x/7b/d4/f2/7bd4f281705290a6e821b4b3e8231de6.jpg",
+      "imageHint": "medieval warrior"
+    },
+    {
+      "id": "shinobi-art",
+      "description": "Тень, несущая смерть в тишине",
+      "imageUrl": "https://i.pinimg.com/736x/66/b6/60/66b6604c9685d260c08efc3c8ac521dc.jpg",
+      "imageHint": "ninja assassin"
+    }
+  ]
+}

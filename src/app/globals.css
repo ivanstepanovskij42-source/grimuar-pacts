@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 6%; /* Глубокий антрацит #121214 */
+    --foreground: 0 0% 88%; /* Пепельный/Слоновая кость #e0e0e0 */
+    --card: 240 6% 12%; /* Темная кожа #1a1b1e */
+    --card-foreground: 0 0% 90%;
+    --popover: 240 10% 6%;
+    --popover-foreground: 0 0% 88%;
+    --primary: 0 65% 30%; /* Приглушенный бордовый */
+    --primary-foreground: 0 0% 95%;
+    --secondary: 240 5% 20%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 60%;
+    --accent: 210 10% 25%; /* Старое серебро/медь */
+    --accent-foreground: 0 0% 95%;
+    --destructive: 0 70% 25%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 20%;
+    --input: 240 5% 15%;
+    --ring: 0 65% 30%;
+    --radius: 0rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased min-h-screen;
+    /* Текстура темной кожи или сланца */
+    background-image: 
+      radial-gradient(circle at 50% 50%, rgba(20, 20, 30, 0.4) 0%, transparent 80%),
+      url("https://www.transparenttextures.com/patterns/dark-leather.png");
+    background-attachment: fixed;
+    position: relative;
+  }
+  
+  /* Эффект тумана и теней по краям */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline uppercase tracking-widest text-primary;
+    text-shadow: 0 0 10px rgba(139, 0, 0, 0.3);
+  }
+}
+
+.grimoire-frame {
+  position: relative;
+  border: 2px solid #2a2b2f;
+  box-shadow: 
+    inset 0 0 50px rgba(0,0,0,0.8),
+    0 15px 35px rgba(0,0,0,0.5);
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  transition: all 0.3s ease;
+}
+
+.contract-paper {
+  background-color: rgba(255, 255, 255, 0.03);
+  border-left: 3px solid hsl(var(--primary));
+  position: relative;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+}
+
+.iron-corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #3a3b3f; /* Цвет старого металла */
+  z-index: 10;
+  opacity: 0.6;
+}
+
+.iron-corner-tl { top: -2px; left: -2px; border-right: 0; border-bottom: 0; }
+.iron-corner-tr { top: -2px; right: -2px; border-left: 0; border-bottom: 0; }
+.iron-corner-bl { bottom: -2px; left: -2px; border-right: 0; border-top: 0; }
+.iron-corner-br { bottom: -2px; right: -2px; border-left: 0; border-top: 0; }
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0c;
+}
+::-webkit-scrollbar-thumb {
+  background: #25262b;
+  border: 1px solid #1a1b1e;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3b3f;
+}
+
+/* Эффект свечения для красного текста (цитат) */
+.blood-glow {
+  color: #ff3333;
+  text-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
