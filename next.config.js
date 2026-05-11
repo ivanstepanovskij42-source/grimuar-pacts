@@ -10,6 +10,9 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  experimental: {
+    serverActions: false, // ПОЛНОЕ ОТКЛЮЧЕНИЕ СЕРВЕРНЫХ ФУНКЦИЙ
+  },
 }
 
 module.exports = nextConfig
